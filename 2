@@ -1,0 +1,36 @@
+import sqlite3
+
+conn = sqlite3.connect('GitHub.db')
+cur = conn.cursor()
+
+a = 'CREATE TABLE IF NOT EXISTS book(id INT,name TEXT,author TEXT,year INT,favorite TEXT)'
+cur.execute(a)
+cur.execute('INSERT INTO book VALUES(1, "Над пропастью во ржи", "Джером Дэвид Сэлинджер", 1951, "Нет")')
+cur.execute('INSERT INTO book VALUES(2, "Двадцать тысяч льё под водой»", "Жюль Габриель Верн ", 1869, "Да")')
+cur.execute('INSERT INTO book VALUES(3, "Сто лет одиночества", "Габриэль Гарсиа Маркес", 1967,"Нет")')
+cur.execute('INSERT INTO book VALUES(4, "Анна Каренина", "Лев Николаевич Толстой", 1877,"Нет")')
+cur.execute('INSERT INTO book VALUES(5, "Гордость и предубеждение", "Джейн Остин", 1813, "Нет")')
+cur.execute('INSERT INTO book VALUES(6, "Ностромо", "Джозеф Конрад", 1904, "Да")')
+cur.execute('INSERT INTO book VALUES(7, "Война и мир", "Лев Николаевич Толстой", 1869, "Нет")')
+cur.execute('INSERT INTO book VALUES(8, "Преступление и наказание", "Фёдор  Михайлович Достоевский", 1866, "Нет")')
+cur.execute('INSERT INTO book VALUES(9, "Евгений Онегин", "Александр Сергеевич Пушкин", 1833, "Да")')
+cur.execute('INSERT INTO book VALUES(10, "Приключения Шерлока Холмса", "Артур Конан-Дойль", 1892,"Нет")')
+
+
+b = 'CREATE TABLE IF NOT EXISTS film(id INT,name TEXT,author TEXT,yearall INT,yearrus INT, money INT,favorite TEXT)'
+cur.execute(b)
+cur.execute('INSERT INTO film VALUES(1, "Звёздные войны Скрытая угроза", "Джордж Уолтон Лукас-мл", 1999, 1999,1000000000, "Да")')
+cur.execute('INSERT INTO film VALUES(2, "Звёздные войны Атака клонов", "Джордж Уолтон Лукас", 2002, 2002,649000000, "Да")')
+cur.execute('INSERT INTO film VALUES(3, "Звёздные войны Месть ситхов", "Джордж Уолтон Лукас", 2005, 2005,848000000, "Да")')
+cur.execute('INSERT INTO film VALUES(4, "Звёздные войны Новая надежда", "Джордж Уолтон Лукас", 1977, 1990, 775000000, "Да")')
+cur.execute('INSERT INTO film VALUES(5, "Звёздные войны Империя наносит ответный удар", "Джордж Уолтон Лукас", 1980, 1988, 550000000, "Да")')
+cur.execute('INSERT INTO film VALUES(6, "Звёздные войны Возвращение джедая", "Джордж Уолтон Лукас", 1983, 2002, 475000000, "Да")')
+cur.execute('INSERT INTO film VALUES(7, "Звёздные войны Пробуждение силы", "Джеффри Джейкоб А́брамс", 2015, 2015, 2000000000, "Нет")')
+cur.execute('INSERT INTO film VALUES(8, "Звёздные войны Последние джедаи", "Райан Крейг Джонсон", 2017, 2017, 1332000000, "Нет")')
+cur.execute('INSERT INTO film VALUES(9, "Звёздные войны Скайуокер. Восход", "Джеффри Джейкоб А́брамс", 2019, 2019, 110000000000, "Нет")')
+cur.execute('INSERT INTO film VALUES(10, "Изгой-один Звёздные войны Истории", "Гарет Эдвардс", 2016, 2016, 1000000000, "Да")')
+
+c = 'CREATE TABLE IF NOT EXISTS music(id INT,name TEXT,author TEXT,year INT,leable TEXT,favorite TEXT)'
+cur.execute(c)
+
+conn.commit()
